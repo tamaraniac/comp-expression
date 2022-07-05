@@ -39,3 +39,12 @@
 127.0.0.1 - - [05/Jul/2022 13:10:05] "GET /runestone/static/favicon.ico HTTP/1.1" 404 -
 
 Aborted!
+127.0.0.1 - - [05/Jul/2022 13:14:04] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Jul/2022 13:14:04] "GET /_static/pygments.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jul/2022 13:14:04] "GET /_static/basic.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jul/2022 13:14:04] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jul/2022 13:14:04] "GET /_static/documentation_options.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/Jul/2022 13:14:05] code 404, message File not found
+127.0.0.1 - - [05/Jul/2022 13:14:05] "GET /runestone/static/images/RunestoneBanner%7B%7Bbanner_num%7D%7D.png HTTP/1.1" 404 -
+
+Aborted!
