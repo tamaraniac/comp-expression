@@ -8,6 +8,16 @@ To get new file changes: 'git pull'
 
 To add file changes to Github: 'git add .', 'git commit -m "describe changes here"', 'git push origin main'
 
+# Install Runestone
+
+If you're on Mac, start by installing Homebrew: https://docs.brew.sh/Installation
+
+Next, install python 3 with homebrew: 'brew install python3'
+
+Then, use python 3 to install runestone and pretext: 'pip3 install runestone', 'pip3 install pretextbook'
+
+On other systems, install python (look up instructions for your own operating system) and then use python to install runestone and pretext: 'pip install runestone', 'pip install pretextbook'
+
 # Using Runestone
 
 All other commands should happen inside a book directory, can get there using 'cd comp-expression'
