@@ -92,6 +92,6 @@ the ``templates_path`` points to them in your conf.py.
 
 conf.py:
 
-.. code:: 
+.. code::
 
     templates_path = ["_templates"]
