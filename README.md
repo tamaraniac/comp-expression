@@ -14,9 +14,9 @@ If you're on Mac, start by installing Homebrew: https://docs.brew.sh/Installatio
 
 Next, install python 3 with homebrew: 'brew install python3'
 
-Then, use python 3 to install runestone and pretext: 'pip3 install runestone', 'pip3 install pretextbook'
+Then, use python 3 to install runestone and pretext: 'pip3 install runestone'
 
-On other systems, install python (look up instructions for your own operating system) and then use python to install runestone and pretext: 'pip install runestone', 'pip install pretextbook'
+On other systems, install python (look up instructions for your own operating system) and then use python to install runestone: 'pip install runestone'
 
 # Using Runestone
 
