@@ -14,16 +14,16 @@ paver.setuputils.install_distutils_tasks()
 sys.path.append(os.getcwd())
 
 # The project name, for use below.
-project_name = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
+project_name = 'CompImpact'
 
-master_url = ''
+master_url = 'http://127.0.0.1:8000'
 if not master_url:
     master_url = get_master_url()
 
 # The root directory for ``runestone serve``.
 serving_dir = "./build/" + project_name
 # The destination directory for ``runestone deploy``.
-dest = "./published"
+dest = "../../static"
 
 options(
     sphinx=Bunch(docroot=".",),
@@ -35,16 +35,19 @@ options(
         confdir=".",
         template_args={
             'login_required': 'false',
-            'loglevel': 10,
+            'loglevel': 0,
             'course_title': project_name,
             'python3': 'false',
-            'dburl': 'postgresql://user:password@localhost/runestone',
+            'dburl': '',
             'default_ac_lang': 'python',
+            'jobe_server': 'http://jobe2.cosc.canterbury.ac.nz',
+            'proxy_uri_runs': '/jobe/index.php/restapi/runs/',
+            'proxy_uri_files': '/jobe/index.php/restapi/files/',
             'downloads_enabled': 'false',
-            'enable_chatcodes': 'False',
-            'allow_pairs': 'False',
-            'dynamic_pages': True,
-            'use_services': 'true',
+            'enable_chatcodes': 'false',
+            'allow_pairs': 'false',
+            'dynamic_pages': False,
+            'use_services': 'false',
             'basecourse': project_name,
             'course_id': project_name,
             # These are used for non-dynamic books.

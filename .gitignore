@@ -1,3 +1,16 @@
 .DS_Store
+build_info
+**/sphinx_settings.json
+build_info
+runestone/dist*.tgz
+dist/
+
 comp-impact/build
+comp-impact/__pycache__
+comp-impact/build_info
+comp-impact/sphinx_settings.json
+
 comp-expression/build
+comp-expression/__pycache__
+comp-expression/build_info
+comp-expression/sphinx_settings.json
