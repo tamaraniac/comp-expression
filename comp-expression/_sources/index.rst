@@ -1,6 +1,13 @@
-=====================
-This Is A New Project
-=====================
+==============================================
+EBook for "Computing for Creative Expression"
+==============================================
+
+ .. toctree::
+       :maxdepth: 2
+
+       shapes.rst
+       snap_account.rst
+       twine.rst
 
 .. Here is were you specify the content and order of your new book.
 
