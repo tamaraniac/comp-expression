@@ -1,13 +1,13 @@
-==============================================
-EBook for "Computing for Creative Expression"
-==============================================
+==================================================================
+EBook for "Computing's Impact on the World: From Text to the Web"
+==================================================================
 
  .. toctree::
        :maxdepth: 2
 
-       shapes.rst
+       language.rst
        snap_account.rst
-       twine.rst
+
 
 .. Here is were you specify the content and order of your new book.
 
