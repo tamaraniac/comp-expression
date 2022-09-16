@@ -1,8 +1,8 @@
 # Using Git / Github
 
-To create directory on your computer: 'git clone https://github.com/tamaraniac/compfor-books.git'
+To create directory on your computer: 'git clone git@github.com:umich-pcas/comp-expression.git'
 
-All other commands should happen inside the directory, can get there using 'cd compfor-books'
+All other commands should happen inside the directory, can get there using 'cd comp-expression'
 
 To get new file changes: 'git pull'
 
@@ -19,8 +19,6 @@ Then, use python 3 to install runestone and pretext: 'pip3 install runestone'
 On other systems, install python (look up instructions for your own operating system) and then use python to install runestone: 'pip install runestone'
 
 # Using Runestone
-
-All other commands should happen inside a book directory, can get there using 'cd comp-expression'
 
 To build changes: 'runestone build'
 
