@@ -6,6 +6,7 @@ EBook for "Computing for Creative Expression"
        :maxdepth: 2
 
        shapes.rst
+       pixels.rst
        snap_account.rst
        twine.rst
 
