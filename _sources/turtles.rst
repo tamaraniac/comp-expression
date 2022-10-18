@@ -398,7 +398,7 @@ Here is a Snap program for drawing a triangle pattern.
 
 It creates a stage that looks like this:
 
-.. image:: figures/triangle-stage.png
+.. image:: figures/triangle-Stage.png
 
 Below is a Python program that generates the same output, but the lines are scrambled.  Put them in the right order.  Drag the needed blocks of statements from the left column to the right column and put them in the right order.  Click on *Check* to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.
 
