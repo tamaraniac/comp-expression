@@ -8,6 +8,7 @@ EBook for "Computing for Creative Expression"
        shapes.rst
        pixels.rst
        turtles.rst
+       language.rst
        snap_account.rst
        twine.rst
 
