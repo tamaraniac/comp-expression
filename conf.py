@@ -296,3 +296,6 @@ htmlhelp_basename = 'PythonCoursewareProjectdoc'
 #shortanswer_optional_div_class = 'journal alert alert-success'
 #showeval_div_class = 'runestone explainer alert alert-warning'
 #tabbed_div_class = 'alert alert-warning'
+shelf_section='Computing for the Arts and Sciences'
+course_description='Computing for Creative Expression'
+key_words="Snap,Python,Processing,P5.js"
