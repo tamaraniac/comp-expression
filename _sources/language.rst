@@ -1,5 +1,5 @@
 =======================================
-Chapter 1: Language
+Chapter 3: Language
 =======================================
 
 Section 1: Generating Sentences
