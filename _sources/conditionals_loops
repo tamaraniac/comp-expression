@@ -1,7 +1,10 @@
 =======================================
-Chapter #: Conditionals and Loops
+Chapter 5: Conditionals and Loops
 =======================================
 
+In the previous chapters, you have explored how to map from Snap code into Processing, Python, and HTML code.  The idea is to make sense of textual programming language based on what you know from Snap.
+
+In this chapter, we reverse the process. We are going to start with two key ideas in programming languages (textual or block-based): Conditionals and loops
 Section 1: Conditionals
 ::::::::::::::::::::::::::::
 
@@ -659,7 +662,7 @@ Here is the complete Processing code. Notice how the y position is changed in th
 
     }
 
-    // have them just ignore this
+    // You can just ignore this - it's the function for drawing the star
     void star(float x, float y, float radius1, float radius2, int npoints) {
       float angle = TWO_PI / npoints;
       float halfAngle = angle/2.0;
