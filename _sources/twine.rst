@@ -28,9 +28,9 @@ To find any image's source link, right click on the image and click *Copy Image 
 
 SECTION 4: Helpful Resources 
 ::::::::::::::::::::::::::::::::::::::
-`How to Create Your First Story`_
-.. _How to Create Your First Story: https://twinery.org/cookbook/starting/twine2/firststory.html 
-`How to Create Adventure Games Using Twine`_
-.. _How to Create Adventure Games Using Twine: https://www.youtube.com/watch?v=Fp9Sxiv-O-0&t=26s 
+
+`How to Create Your First Story <https://twinery.org/cookbook/starting/twine2/firststory.html>`_
+
+`How to Create Adventure Games Using Twine (Video) <https://www.youtube.com/watch?v=Fp9Sxiv-O-0&t=26s>`_ 
 
 

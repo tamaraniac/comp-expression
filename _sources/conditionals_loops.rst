@@ -4,14 +4,14 @@ Chapter 5: Conditionals and Loops
 
 *Chapter written by Chloe Nguyen*
 
-In the previous chapters, you have explored how to map from Snap code into Processing, Python, and HTML code.  The idea is to make sense of textual programming language based on what you know from Snap.
+In the previous chapters, you have explored how to map from Snap code into Processing, Python, SQL, and HTML code.  The idea is to make sense of textual programming language based on what you know from Snap.
 
-In this chapter, we reverse the process. We are going to start with two key ideas in programming languages (textual or block-based): Conditionals and loops. We use both Snap and Processing to provide examples.
+In this chapter, we reverse the process. We are going to start with two key ideas in programming languages (textual or block-based): Conditionals and loops. We use both Snap and Python to provide examples.
 
 Section 1: Conditionals
 ::::::::::::::::::::::::::::
 
-Conditionals are also known as *if clauses* and we use them all the time to express that one thing depends on something else. This idea transfers to programming! 
+Conditionals are also known as *if clauses* and we use them all the time to express that one thing depends on something else. This idea transfers to programming.
 
 Let's start with the "if" statement. If you ask someone how their day is, your answer depends on their response. You wouldn't say "Yay!" if someone told you that they had a bad day (hopefully). You would only say "Yay!" if someone says they are "Good."
 
@@ -24,186 +24,105 @@ The Snap Version
 --------------------
 .. image:: figures/snapExample1.png
 
-Here is a `project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example1>`_ that shows the logic from above.  Here's what it looks when running.
+Here is a `simple dialog project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example1>`_ that shows the logic from above.  Here's what it looks when running.
 
 .. image:: figures/SnapExample1-running.png
 
-The Processing Version
+The Python Version
 --------------------
 
-The below program does the same thing in Processing.  
+The below program does the same thing in Python.  Click 'Run' to have a conversation.
 
-.. activecode:: Processing1
-   :language: html
-   :nocodelens:
+.. activecode:: ifstatements
+   :language: python
 
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>
-      
-      // problem with : import import javax.swing.*; (library might be too big to paste on bottom?)
-      void setup() {
-        size(480, 360);
-      }
+   answer = input('Hello! How are you?')
+  
+   if 'Good' in answer:
+      print('Yay!')
+   elif 'Bad' in answer:
+      print('Oh no, at least we beat OSU in hockey :)')
+   else:
+      print('I do not know how to respond to that.');
 
-      void draw() {
-        background(255,255,255);
-        String answer = getString("Hello! How are you?");
+Let's look at this syntax. The first if statment is checking to see if the word "Good' is in the answer, which was input from the user. "Elif" stands for else if and checks for "Bad" in the answer as long as "Good" was not found. Finally, "else" tells the user that the computer has no idea how to respond to what the user inputted.
 
-        if(answer.equals("Good"))
-        {
-          println("Yay!");
-        }
-        else if(answer.equals("Bad"))
-        {
-              println("Oh no, at least we beat OSU in hockey :)");
-        }
-        else
-        {
-          println("I do not know how to respond to that.");
-        }
+.. mchoice:: PyIf1-answer
+    :correct: c
+    :answer_a: A built-in (like in Snap) that contains what the user types.
+    :answer_b: A special variable that prompts the user for input.
+    :answer_c: That is not a valid month.
+    :answer_d: A number representing the number of characters typed
+    :feedback_a: No, answer is not built-in here.
+    :feedback_b: No, that's what the function input() does.
+    :feedback_c: Yes, answer is a variable that contains the string input by the user.
+    :feedback_d: No, it is a string returned by input().
 
-        noLoop();
-      }
+    What is *answer* in the above code?
 
-      int getInt(String s)
-      {
-         return Integer.parseInt(getString(s));
-      }
+.. mchoice:: PyIf2-answer
+    :correct: a
+    :answer_a: Yay!
+    :answer_b: Oh no, at least we beat OSU in hockey :)
+    :answer_c: I do not know how to respond to that.
+    :feedback_a: Yes, because the program looks for 'Good' anywhere in the input
+    :feedback_b: No, that only happens if 'Bad' is in the input
+    :feedback_c: No, the input has 'Good' in it.
 
-      String getString(String s)
-      {
-         return prompt(s);
-      }
+    What gets printed if you input to the above program "It was a Good Day!"?
 
-      String prompt(String s)
-      {
-         println(s);
-         String entry = JOptionPane.showInputDialog(s);
-         if (entry == null)
-            return null;
-         println(entry);
-         return entry;
-      }
+.. mchoice:: PyIf3-answer
+    :correct: c
+    :answer_a: Yay!
+    :answer_b: Oh no, at least we beat OSU in hockey :)
+    :answer_c: I do not know how to respond to that.
+    :feedback_a: No, because the program looks for 'Good' anywhere in the input, and the capital G is critical
+    :feedback_b: No, that only happens if 'Bad' is in the input
+    :feedback_c: Yes, the input has 'good' in it and not "Bad" or "Good.""
 
-      // Below this is the code to make turtles work in P5.js
-      
-    </script>
-   </body>
-
-   </html>
-
-Let's look at this syntax. The first if statment is checking to see if the word "Good' is in the answer, which was input from the user. "The else if statement checks for "Bad" in the answer as long as "Good" was not found. Finally, "else" tells the user that the computer has no idea how to respond to what the user inputted.
+    What gets printed if you input to the above program "It was a good day!"?
 
 Another Example
 --------------------
-Do you know when you sign up for a new account and have to enter your birthday? Some websites have you put a number for your month, others give you a drop down menu, and still others show a calender. Here is a simple `Snap project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example2>`_ that takes in a number and gives your birth month. Note that instead of an "else if" statement, Snap just has you put an if statement inside of another one. It works the same way! The first if statement is checked before the second one, the second before the third, and so on.
+Do you know when you sign up for a new account and have to enter your birthday? Some websites have you put a number for your month, others give you a drop down menu, and still others show a calender. Here is a simple `Snap project for converting months <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example2>`_ that takes in a number and gives your birth month. Note that instead of an "else if" statement, Snap just has you put an if statement inside of another one. It works the same way! The first if statement is checked before the second one, the second before the third, and so on.
 
-The below program does the same thing in Processing.  
+The below program does the same thing in Python.  Click 'Run' to try it out.
 
-.. activecode:: Processing2
-   :language: html
-   :nocodelens:
+.. activecode:: IfStatements1
+   :language: python
+   
+   number = int(input('What month were you born?'))
+   
+   if number > 12 or number < 1:
+      print('That is not a valid month.')
+   elif number == 1:
+      print('January')
+   elif number == 2:
+      print('February')
+   elif number == 3:
+      print('March')
+   elif number == 4:
+      print('April')
+   elif number == 5:
+      print('May')
+   elif number == 6:
+      print('June')
+   elif number == 7:
+      print('July')
+   elif number == 8:
+      print('August')
+   elif number == 9:
+      print('September')
+   elif number == 10:
+      print('October')
+   elif number == 11:
+      print('November')
+   else:
+      print('December');
 
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>
-      
-      // problem with : import import javax.swing.*; (library might be too big to paste on bottom?)
-      void setup() {
-        size(480, 360);
-      }
-      
-      void draw() {
-        background(255,255,255);
-        int answer = getInt("What month were you born?");
+Try answering these questions about the Python code above.
 
-        if(answer > 12 || answer < 1)
-        {
-          println("That is not a valid month.");
-        }
-        else if(answer == 1)
-        {
-          println("January");
-        }
-        else if(answer == 2)
-        {
-           println("February");
-        }
-          else if(answer == 3)
-        {
-          println("March");
-        }
-        else if(answer == 4)
-        {
-           println("April");
-        }
-          else if(answer == 5)
-        {
-          println("May");
-        }
-        else if(answer == 6)
-        {
-           println("June");
-        }
-        else if(answer == 7)
-        {
-          println("July");
-        }
-        else if(answer == 8)
-        {
-           println("August");
-        }
-          else if(answer == 9)
-        {
-          println("September");
-        }
-        else if(answer == 10)
-        {
-           println("October");
-        }
-        else if(answer == 11)
-        {
-          println("November");
-        }
-        else
-        {
-          println("December");
-        }
-
-        noLoop();
-      }
-
-      int getInt(String s)
-      {
-         return Integer.parseInt(getString(s));
-      }
-
-      String getString(String s)
-      {
-         return prompt(s);
-      }
-
-      String prompt(String s)
-      {
-         println(s);
-         String entry = JOptionPane.showInputDialog(s);
-         if (entry == null)
-            return null;
-         println(entry);
-         return entry;
-      }
-      
-    </script>
-   </body>
-
-   </html>
-
-Try answering these questions about the Processing code above.
-
-.. mchoice:: ProIf1
+.. mchoice:: PyIf1
     :correct: c
     :answer_a: February
     :answer_b: I do not know how to respond to that.
@@ -216,7 +135,7 @@ Try answering these questions about the Processing code above.
 
      What is outputted if the input is "14"?
 
-.. mchoice:: ProIf2
+.. mchoice:: PyIf2
     :correct: d
     :answer_a: No reason, order doesn't matter.
     :answer_b: If they did not check that the input was an number between 1-12, December would be outputted even when input is "-1".
@@ -230,7 +149,7 @@ Try answering these questions about the Processing code above.
      Why do you think the programmer checked that it was a valid month first?
 
 
-.. mchoice:: ProIf3
+.. mchoice:: PyIf3
     :correct: c
     :answer_a: It would have to check if that day was possible for that month. 
     :answer_b: It would have to check if that day was possible for that month for that year. 
@@ -238,8 +157,21 @@ Try answering these questions about the Processing code above.
     :feedback_a: Yes. Only 28 days in February, but 31 in March.
     :feedback_b: Yes. Leap year! Now there are 29 days in February.
     :feedback_c: Yes, exactly right.
-
+    
      How would this program change if you were doing days?
+
+.. mchoice:: PyIf-error
+    :correct: a
+    :answer_a: Because we try to change the input() into an integer with int(), and you can't change a month name into an integer.
+    :answer_b: Python is broken.
+    :answer_c: It works if you use lower-case characters.
+    :answer_d: Because the variable *number* can only be a number.
+    :feedback_a: Yes. input() returns a string, and int() changes that into a number, if it can.
+    :feedback_b: No, not in this case.
+    :feedback_c: No, characters can't be changed into numbers.
+    :feedback_d: No, the variable *number* can actually hold a string or a number. The word doesn't matter.
+
+    What happens if you type a month name, like 'September'?  Try it. You get an error. Why?
 
 Section 2: Loops
 ::::::::::::::::::::::::::::
@@ -251,163 +183,77 @@ For example, imagine making a circle in Snap. You would move a few steps forward
 
 The Snap Version
 --------------------
-.. image:: ADD_IN
+.. image:: figures/Snap-apple-example.png
 
-Here is a `project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example3>`_ that takes in a word from the user and makes a right triangle out of the letters!
+Here is a `project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example3>`_ that takes in a word from the user and makes a right triangle out of the letters! Try "apple" as in this example, or another word like "dinosaur."
 
-The Processing Version
+This program has two loops.  The one counts *i* from 1 to the length (in characters) of the input *answer*.  The interior loop counts *j* from 1 to the value of *i*. Inside that, we write the letters of the answer.  So the first time through the loop, i is 1 and j is 1, so we print just one letter. In the second time, i is 2 and j is 1 and then 2.  Third time, i is 3 and j is 1, then 2, then 3.  We use j to reference the character that gets written on the screen.
+
+The Python Version
 --------------------
 
-Let's start with a simplified version in Processing.
-
-.. activecode:: Processing3
-   :language: html
-   :nocodelens:
-
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>
-      
-      // problem with : import import javax.swing.*; (library might be too big to paste on bottom?)
-      void setup() {
-        size(480, 360);
-      }
-
-      void draw() {
-        background(255,255,255);
-
-        String answer = getString("Enter a word: ");
-        int length = answer.length();
+Let's start with a simplified version in Python.
 
 
-        for(int i = 0; i < length; i++)
-        {
-          print(answer.charAt(i));
-        }
-
-
-        noLoop();
-      }
-
-      int getInt(String s)
-      {
-         return Integer.parseInt(getString(s));
-      }
-
-      String getString(String s)
-      {
-         return prompt(s);
-      }
-
-      String prompt(String s)
-      {
-         println(s);
-         String entry = JOptionPane.showInputDialog(s);
-         if (entry == null)
-            return null;
-         println(entry);
-         return entry;
-      }  
-    </script>
-   </body>
-
-   </html>
+.. activecode:: ForLoops1
+   :language: python
+   
+   word = input('Enter a word: ')
+   
+   length = len(word);
+   
+   for i in range(length):
+    print(word[i], end = '')
 
 Now this code does not do the exact same thing yet. Let's walk through it
   - takes in a word from the user, e.g. apple
   - finds the length of the word, e.g. 5
   - makes a for loop that runs 5 times
-  - outputs answer.ChartAt(i)
+  - outputs word[i]
 
-How do we know that we loop around 5 times? The line "for(int i = 0; i < length; i++)" creates a for loop that goes around "length" number of times doing whatever is after the colon. We start with that variable i equal to 0 and print something out. The next time around, i = 1 and something is printed out (and so on). The i++ means to increment (or add) 1 to the variable i at the end of each loop.
+How do we know that we loop around 5 times? The line "for i in range(length):" creates a for loop that goes around "length" number of times doing whatever is after the colon. We start with that variable i equal to 0 and print something out. The next time around, i = 1 and something is printed out (and so on).
 
-If the word is apple, length is equal to 5. The for loop goes until the value of i is equal to or greater to length (i < length). With that logic, the loop STOPS when i goes to 5. That means it outputs something for i = 0, 1, 2, 3, 4. Or, in other words, goes around 5 times.
+If the word is apple, length is equal to 5. The for loop goes until the value of i is equal to or greater to whatever number is inside range(). With that logic, the loop STOPS when i goes to 5. That means it outputs something for i = 0, 1, 2, 3, 4. Or, in other words, goes around 5 times.
 
-What are we outputting? The variable "answer" is the word that the user gave us. The phrase "answer.ChartAt(i)" gives us a letter (character) from the word. If i = 0, it would be 'a.' If i = 1, it would be 'p.' If i = 2, it would be 'p.' If i = 3, it would be 'l.' If i = 4, it would be 'e.'
+What are we printing? The variable "word" is the word that the user gave us. The phrase "word[i]" gives us a letter from the word. If i = 0, it would be 'a.' If i = 1, it would be 'p.' If i = 2, it would be 'p.' If i = 3, it would be 'l.' If i = 4, it would be 'e.'
 
-Try answering this question about the Processing code above.
+Try answering this question about the Python code above.
 
-.. mchoice:: ProFor
+.. mchoice:: PyIf-loop1
     :correct: c
     :answer_a: Yes, "applee."
     :answer_b: Yes, "applea."
     :answer_c: No.
-    :feedback_a: No, the word apple does not have a sixth letter so answer.ChartAt(5) would give an error!
-    :feedback_b: No, the word apple does not have a sixth letter so answer.ChartAt(5) would give an error!
+    :feedback_a: No, the word apple does not have a sixth letter so word[5] would give an error!
+    :feedback_b: No, the word apple does not have a sixth letter so word[5] would give an error!
     :feedback_c: Yes, exactly right.
 
-     If the word is apple, would a for loop that has i < 6 work? If so, what would the output be?
+     If the word is apple, would a for loop that has range(6) work? If so, what would the output be?
 
-Here is the Processing code that matches the Snap project above.
+Here is the Python code that matches the Snap project above.
 
-.. activecode:: Processing4
-   :language: html
-   :nocodelens:
-
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>
-      
-      // problem with : import import javax.swing.*; (library might be too big to paste on bottom?)
-      void setup() {
-        size(480, 360);
-      }
-      void draw() {
-        background(255,255,255);
-
-        String answer = getString("Enter a word: ");
-        int length = answer.length();
-
-
-        for(int i = 0; i < length; i++)
-        {
-         for(int j = 0; j < (i+1); j++)
-         {
-           print(answer.charAt(i));
-         }
-         println();
-        }
-
-
-        noLoop();
-      }
-
-      int getInt(String s)
-      {
-         return Integer.parseInt(getString(s));
-      }
-
-      String getString(String s)
-      {
-         return prompt(s);
-      }
-
-      String prompt(String s)
-      {
-         println(s);
-         String entry = JOptionPane.showInputDialog(s);
-         if (entry == null)
-            return null;
-         println(entry);
-         return entry;
-      } 
-    </script>
-   </body>
-
-   </html>
+.. activecode:: ForLoops2
+   :language: python
+   
+   word = input('Enter a word: ')
+   
+   length = len(word);
+   
+   for i in range(length):
+    for j in range(i+1):
+       print(word[i], end = '')
+    print()
 
 Now there are two for loops and we have our right triangle. Here a few hints about how this works:    
   - once the first for loop is entered, the second for loop is entered and runs COMPLETELY (j = 1, j = 2, j = 3,...) before the first for loop "loops"
   - i changes every time! that means the number of times the second for loop "loops" also changes every time
-    - when i = 0, j runs once
-    - when i = 1, j runs twice
-
-
+  - when i = 0, j runs once
+  - when i = 1, j runs twice
+    
+ 
  Try answering these questions about the Python code above.
 
-.. mchoice:: ProFor1
+.. mchoice:: PyFor1
     :correct: b
     :answer_a: 5 times
     :answer_b: 6 times
@@ -417,25 +263,10 @@ Now there are two for loops and we have our right triangle. Here a few hints abo
     :feedback_c: Yes, exactly right. i + 1 = 3
 
      If i = 2, how many times will the second for loop "loop"?
-
-     .. mchoice:: ProFor2
-    :correct: a
-    :answer_a: a
-               p p 
-               l l l
-    :answer_b: 6 a
-                 p p 
-    :answer_c: a
-               p p 
-               l e
-    :feedback_a: Yes, exactly right.
-    :feedback_b: No. Remember we start with i = 0 so the first for loop is finishing it's third iteration.
-    :feedback_c: No. Think about answer.ChartAt(i). The second for loop just outputs the same letter (answer.ChartAt(i)), j (i+1) number of times.
-
-     Let's say the word is apple. If we pause the program after the first for loop is finished a third time (i equals 2 and is about to equal 3), what does the output look like?
-
-
-.. mchoice:: ProFor3
+     
+     
+    
+.. mchoice:: PyFor3
     :correct: a
     :answer_a: Prints new line, first for loop.
     :answer_b: Prints new line, second for loop.
@@ -448,243 +279,14 @@ Now there are two for loops and we have our right triangle. Here a few hints abo
 
      What do you think print() does? And what for loop does it belong to?
 
-.. mchoice:: ProFor4
+.. mchoice:: PyFor4
     :correct: c
-    :answer_a: answer.ChartAt(length-i) 
-    :answer_b: answer.ChartAt(i+j)
-    :answer_c: answer.ChartAt((length-1)-i)
-    :feedback_a: No. When i=0, we are left with answer.ChartAt(length). For apple, answer.ChartAt(5) does not exist, as answer.ChartAt(0) is 'a' and answer.ChartAt(4) is 'e'.
+    :answer_a: print(word[length-i], end = '')
+    :answer_b: print(word[i+j], end = '')
+    :answer_c: print(word[(length-1)-i], end = '')
+    :feedback_a: No. When i=0, we are left with word[length]. For apple, word[5] does not exist, as word[0] is 'a' and word[4] is 'e'.
     :feedback_b: No. The value of j changes, so there would be different letters on the same line.
     :feedback_c: Yes, exactly right. 
-
-     If you wanted to make a right triangle of the word's letters in BACKWARD order, what would you replace "print(answer.charAt(i))" with?
-
-Circle Example
---------------------
-Let's do something more visual. Here is a `project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example4>`_ that draws a numer of circles onto a screen based on user input.
-
-.. mchoice:: ProFor4
-    :correct: c
-    :answer_a: 0, <, --
-    :answer_b: 0, >, ++
-    :answer_c: 0, <, ++
-    :feedback_a: No. If i = 0 at the start, then -- would make it decrement (-1) every time and it would always be less than answer.
-    :feedback_b: No. If i = 0 at the start, it will never loop because 0 > a positive number (answer) is not true.
-    :feedback_c: Yes, exactly right. 
-
-     If you wanted to do the same thing in processing and the variable answer is the positive number from the user, fill in the for loop (where one loop means one circle).
-     for(int i = _; i __ answer; i__){
-         circle(i*10,180,100);
-         noFill();
-     }
+    
+     If you wanted to make a right triangle of the word's letters in BACKWARD order, what would you replace "print(word[i], end = '')" with?
      
-One of the answer options showed a -- instead of ++. This means instead of i going from 0 to 1 and 1 to 2, it would go from 0 to -1 and 0 to -2. But i doesn't always have to equal 0 in the begininning!
-
-.. mchoice:: ProFor4
-    :correct: b
-    :answer_a: answer, <, --
-    :answer_b: answer, >, --
-    :answer_c: answer, <, ++
-    :feedback_a: No. If i = answer at the start, it will never loop because a positive number (answer) > 0 is not true.
-    :feedback_b: Yes, exactly right.
-    :feedback_c: No. If i = answer at the start, it will always be greater than 0 unless one decrements (-1) instead of increments (+1);
-
-     If you wanted to do the same thing in processing and the variable answer is the positive number from the user, fill in the for loop (where one loop means one circle).
-     for(int i = _; i __ 0; i__){
-         circle(i*10,180,100);
-         noFill();
-     }
-     
-   Here is the Processing example in its entirety.
-
-.. activecode:: Processing4
-   :language: html
-   :nocodelens:
-
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>
-      
-      // problem with : import import javax.swing.*; (library might be too big to paste on bottom?)
-      void setup() {
-        size(480, 360);
-      }
-      
-      void draw() {
-        background(255,255,255);
-        int answer = getInt("Enter a number: ");
-
-        for(int i = 0; i < answer; i++)
-        {
-            circle(i*10,180,100);
-            noFill();
-        }
-
-        noLoop();
-
-      }
-
-      // can probably ignore beyond this point
-      int getInt(String s)
-      {
-         return Integer.parseInt(getString(s));
-      }
-
-      String getString(String s)
-      {
-         return prompt(s);
-      }
-
-      String prompt(String s)
-      {
-         println(s);
-         String entry = JOptionPane.showInputDialog(s);
-         if (entry == null)
-            return null;
-         println(entry);
-         return entry;
-      }
-
-    </script>
-   </body>
-
-   </html>
-
-Star Grid Example
---------------------
-In the triangle example, there were two for loops, one inside the other. That is called nested for loops and very helpful when drawing something in the 2D space.  Here is a `project <https://snap.berkeley.edu/project?username=chloeejnguyen&projectname=example5>`_ that fills the space with evenly spaced stars. It starts with the top row going completely through all the columnds, then moves down to the second row and goes through all the columns. Instead of figuring out how many stars fit in a row (and how many rows there are) and making two for loop, two while loops used. While loops are loops that continue doing whatever action is inside of them UNTIL a condition is met.
-
-.. mchoice:: ProFor4
-    :correct: a
-    :answer_a: reaches right side of screen
-    :answer_b: reaches left side of screen
-    :answer_c: never
-    :feedback_a: Yes, exactly right.
-    :feedback_b: No. We start at the top left corner!
-    :feedback_c: No. That would be an infinite loop!
-
-     The second while loop is supposed to stamp a star, move to the right, and stamp a star. When should it stop moving to the right?
-     
-     If the size of the screen is 480 in the x direction, it would look like "while(x < 480)." 
-     
-
-.. activecode:: Processing5
-   :language: html
-   :nocodelens:
-
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>  
-    void setup() {
-      size(480, 360);
-    }
-
-    void draw() {
-      background(0);
-
-      int x = 20;
-      int y = 20;
-
-      while(y < 360)
-      {
-        while(x < 480)
-        {
-          star(x,y,4,8,5);
-          x = x + 20;
-        }
-        y = y + 20;
-        _____
-      }
-
-    }
-
-    // have them just ignore this
-    void star(float x, float y, float radius1, float radius2, int npoints) {
-      float angle = TWO_PI / npoints;
-      float halfAngle = angle/2.0;
-      beginShape();
-      for (float a = 0; a < TWO_PI; a += angle) {
-        float sx = x + cos(a) * radius2;
-        float sy = y + sin(a) * radius2;
-        vertex(sx, sy);
-        sx = x + cos(a+halfAngle) * radius1;
-        sy = y + sin(a+halfAngle) * radius1;
-        vertex(sx, sy);
-      }
-      endShape(CLOSE);
-    }
-
-
-    </script>
-   </body>
-
-   </html>
-   
-     
-  .. mchoice:: ProFor4
-    :correct: b
-    :answer_a: x = 0
-    :answer_b: x = 20
-    :answer_c: y = 10
-    :feedback_a: No. Look at the beginning of draw, where do we start x and y?
-    :feedback_b: Yes, exactly right. You have to reset x!
-    :feedback_c: No. Y has already been set to its next position!
-
-     The code above is missing something important for it to work. What is it?
-
-Here is the complete Processing code. Notice how the y position is changed in the first while loop and the x position is reset, while the second while loop moves the x position to the right and does nothing to the y.
-
-.. activecode:: Processing5
-   :language: html
-   :nocodelens:
-
-   <html>
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-   <body>
-   <script>  
-    void setup() {
-      size(480, 360);
-    }
-
-    void draw() {
-      background(0);
-
-      int x = 20;
-      int y = 20;
-
-      while(y < 360)
-      {
-        while(x < 480)
-        {
-          star(x,y,4,8,5);
-          x = x + 20;
-        }
-        y = y + 20;
-        x = 20;
-      }
-
-    }
-
-    // You can just ignore this - it's the function for drawing the star
-    void star(float x, float y, float radius1, float radius2, int npoints) {
-      float angle = TWO_PI / npoints;
-      float halfAngle = angle/2.0;
-      beginShape();
-      for (float a = 0; a < TWO_PI; a += angle) {
-        float sx = x + cos(a) * radius2;
-        float sy = y + sin(a) * radius2;
-        vertex(sx, sy);
-        sx = x + cos(a+halfAngle) * radius1;
-        sy = y + sin(a+halfAngle) * radius1;
-        vertex(sx, sy);
-      }
-      endShape(CLOSE);
-    }
-
-
-    </script>
-   </body>
-
-   </html

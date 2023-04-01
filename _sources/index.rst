@@ -9,6 +9,7 @@ EBook for "Computing for Creative Expression"
        pixels.rst
        turtles.rst
        language.rst
+       conditionals_loops.rst
        snap_account.rst
        twine.rst
 
