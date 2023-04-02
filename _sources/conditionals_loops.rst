@@ -258,8 +258,8 @@ Now there are two for loops and we have our right triangle. Here a few hints abo
     :answer_a: 5 times
     :answer_b: 6 times
     :answer_c: 3 times
-    :feedback_a: No, what is the range?
-    :feedback_b: No, what is the range?
+    :feedback_a: No, check the range function again
+    :feedback_b: No, check the range function again
     :feedback_c: Yes, exactly right. i + 1 = 3
 
      If i = 2, how many times will the second for loop "loop"?
