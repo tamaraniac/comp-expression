@@ -51,7 +51,7 @@ Let's look at this syntax. The first if statment is checking to see if the word 
     :correct: c
     :answer_a: A built-in (like in Snap) that contains what the user types.
     :answer_b: A special variable that prompts the user for input.
-    :answer_c: That is not a valid month.
+    :answer_c: Just a variable containing a string.
     :answer_d: A number representing the number of characters typed
     :feedback_a: No, answer is not built-in here.
     :feedback_b: No, that's what the function input() does.
@@ -254,7 +254,7 @@ Now there are two for loops and we have our right triangle. Here a few hints abo
  Try answering these questions about the Python code above.
 
 .. mchoice:: PyFor1
-    :correct: b
+    :correct: c
     :answer_a: 5 times
     :answer_b: 6 times
     :answer_c: 3 times

@@ -46,7 +46,7 @@ options(
             'downloads_enabled': 'false',
             'enable_chatcodes': 'false',
             'allow_pairs': 'false',
-            'dynamic_pages': True,
+            'dynamic_pages': False,  #False is local and True is server
             'use_services': 'false',
             'basecourse': project_name,
             'course_id': project_name,
